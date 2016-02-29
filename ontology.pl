@@ -83,11 +83,9 @@ part_of('organelle membrane', 'membrane-bounded organelle').
 
 % Toisaroot = WIP.
 
-toisaroot(C, L) :- is_a(C, 'cellular component'), [[L|C]|'cellular component'].
+toisaroot('cellular component', ['cellular component']).
 
-toisaroot(C, L) :- is_a(C, C1), toisaroot(C1, [L|C]).
-
-toisaroot(C, []) :- is(C, C1), toisaroot(C1, C).
+toisaroot(C, [C|List]) :- is_a(C, C1), toisaroot(C1, List).
 
 % Subconcept complete!
 

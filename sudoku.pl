@@ -97,7 +97,11 @@ getCube(Board, Number, AsList) :-
 % Given a board, solve it in-place.
 % After calling `solve` on a board, the board should be fully
 % instantiated with a satisfying Sudoku solution.
-solve(Board).
+solve(Board) :-
+	solve(Board, )
+
+solve([[]]).
+
 
 % Prints out the given board.
 printBoard([]).

@@ -102,9 +102,8 @@ myLast([_|T], X) :-
 % myLength([0, 1, 2], I). % I = 3
 
 myLength([_|T],N) :-
-	N > 0,
-	N1 is N-1,
-	myLength(T,N1).
+	myLength(T,N1),
+	N is N1+1.
 
 myLength([],0).	
 
