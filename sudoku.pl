@@ -99,7 +99,6 @@ getCube(Board, Number, AsList) :-
 % instantiated with a satisfying Sudoku solution.
 solve(Board).
 
-
 % Prints out the given board.
 printBoard([]).
 printBoard([Head|Tail]) :-
