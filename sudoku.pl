@@ -92,7 +92,7 @@ getCube(Board, Number, AsList) :-
         sublist(Row2, ColLow, ColHigh, Row2Nums),
         sublist(Row3, ColLow, ColHigh, Row3Nums),
         append(Row1Nums, Row2Nums, TempRow),
-        append(TempRow, Row3Nums, AsList).
+        append(TempRow, Row3Nums, AsList)                
 
 % Given a board, solve it in-place.
 % After calling `solve` on a board, the board should be fully
