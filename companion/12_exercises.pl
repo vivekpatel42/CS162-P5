@@ -12,7 +12,8 @@
 % ANSWER: (X = 1, Y = 2)
 
 % QUERY: 1 - 2 = -(X, Y).
-% ANSWER: ???
+% ANSWER: X = 1,
+Y = 2.
 
 % QUERY: 1 - 2 = +(X, Y).
-% ANSWER: ???
+% ANSWER: false.

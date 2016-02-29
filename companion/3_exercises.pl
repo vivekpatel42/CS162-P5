@@ -37,18 +37,18 @@ gizmo(c,4).
 % ANSWER: X = 1, X = 2, X = 3
 
 % QUERY: easy(X).
-% ANSWER: ???
+% ANSWER: X = 1, X = 2, X = 3
 
 % QUERY: gizmo(X,3).
-% ANSWER: ???
+% ANSWER: X = b, X = c, X = a
 
 % QUERY: gizmo(d,Y).
-% ANSWER: ???
+% ANSWER: Y = 5
 
 % QUERY: gizmo(X,X).
-% ANSWER: ???
+% ANSWER: false
 
-% Consider this logicbase:
+% Consider this logicbase: 
 
 harder(a,1).
 harder(c,X).
@@ -58,14 +58,14 @@ harder(d,2).
 % Again, replace `???` where appropriate below:
 
 % QUERY: harder(a,X).
-% ANSWER: ???
+% ANSWER: X = 1
 
 % QUERY: harder(c,X).
-% ANSWER: ???
+% ANSWER: true
 
 % QUERY: harder(X,1).
-% ANSWER: ???
+% ANSWER: X = a, X = c, false.
 
 % QUERY: harder(X,4).
-% ANSWER: ???
+% ANSWER: X = c, X = b, false.
 

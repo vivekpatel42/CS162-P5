@@ -16,7 +16,8 @@ xGreaterY(coordinate(X, Y)) :-
 % is greater than the X coordinate.  Your clause should take
 % the coordinate as a parameter, and be named `yGreaterX`.
 
-% ---REPLACE ME WITH CODE---
+yGreaterX(coordinate(X,Y)) :-
+	Y > X.
 
 % Your definition should allow the following query to succeed:
 %
@@ -39,7 +40,8 @@ add2ToY(coordinate(X, Y), coordinate(X, NewY)) :-
 % -The amount to add to the X coordinate
 % -The new coordinate
 
-% ---REPLACE ME WITH CODE---
+addX(coordinate(X1,N),A,coordinate(X2,N)) :-
+	X2 is X1 + A.	
 
 % Your implementation of `addX` should allow the
 % following query to succeed:

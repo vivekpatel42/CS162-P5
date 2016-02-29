@@ -24,19 +24,26 @@
 % ANSWER: (A = 1, B = 2, C = 3)
 
 % QUERY: [a,b,c,d] = [H|T].
-% ANSWER: ???
+% ANSWER: H = a,
+T = [b, c, d].
 
 % QUERY: [a,[b,c,d]] = [H|T].
-% ANSWER: ???
+% ANSWER: H = a,
+T = [[b, c, d]].
 
 % QUERY: [a] = [H|T].
-% ANSWER: ???
+% ANSWER: H = a,
+T = [].
 
 % QUERY: [apple,3,X,'What?'] = [A,B|Z].
-% ANSWER: ???
+% ANSWER: A = apple,
+B = 3,
+Z = [X, 'What?'].
 
 % QUERY: [[a,b,c],[d,e,f],[g,h,i]] = [H|T].
-% ANSWER: ???
+% ANSWER: H = [a, b, c],
+T = [[d, e, f], [g, h, i]].
 
 % QUERY: [a(X,c(d,Y)), b(2,3), c(d,Y)] = [H|T].
-% ANSWER: ???
+% ANSWER: H = a(X, c(d, Y)),
+T = [b(2, 3), c(d, Y)].

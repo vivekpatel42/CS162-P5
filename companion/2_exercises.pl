@@ -9,13 +9,19 @@
 % components.
 
 makesOperatingSystem(google).
+makesOperatingSystem(apple).
+makesOperatingSystem(microsoft).
 % FILL ME IN - apple and microsoft
 
 operatingSystem(freebsd).
 operatingSystem(openbsd).
+operatingSystem(mac_os_x).
+operatingSystem(windows).
+operatingSystem(linux).
 % FILL ME IN - mac_os_x, windows, and linux
 
 openSource(freebsd).
 openSource(openbsd).
+openSource(linux).
 % FILL ME IN - linux
 

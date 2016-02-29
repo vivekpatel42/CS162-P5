@@ -12,7 +12,8 @@
 % ...where `F` and `C` represent the temperatures in Fahrenheit
 % and Celsius, respectively
 
-% ---REPLACE ME WITH CODE---
+f_to_c(X,Y) :-
+	Y is  (X-32)*(5/9).
 
 % With your conversion routine in hand, the following queries should
 % all succeed:

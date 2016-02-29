@@ -81,3 +81,18 @@ part_of('photosynthetic membrane', thylakoid).
 part_of('vesicle membrane', 'membrane-bounded vesicle').
 part_of('organelle membrane', 'membrane-bounded organelle').
 
+toisaroot(C, L) :- is_a(C, 'cellular component'), [[L|C]|'cellular component'].
+
+toisaroot(C, L) :- is_a(C, C1), toisaroot(C1, [L|C]).
+
+toisaroot(C, []) :- is(C, C1), toisaroot(C1, C).
+
+% Subconcept complete!
+
+subconcept(C,X) :- is_a(C,C1), subconcept(C1,X).
+	
+subconcept(C,X) :-	part_of(C,C1), subconcept(C1,X).
+
+subconcept(C,X) :- is_a(C,X).
+	
+subconcept(C,X) :- part_of(C,X).

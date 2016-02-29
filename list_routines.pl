@@ -23,7 +23,7 @@ myAppend([], L, L).
 % process the rest of the non-empty list and the result
 % list.
 myAppend([H|T], L, [H|R]) :-
-        myAppend(T, L, R).
+	myAppend(T, L, R).
 
 % myMember: Takes an element and a list.  Determines if
 % the element is in the provided list.
@@ -50,12 +50,12 @@ myMember(X, [_|R]) :-
 %
 
 % BASE CASE - The list begins with X and Y.
-% ---FILL ME IN---
+myNextto(X,Y,[X,Y|_]).
 
 % RECURSIVE CASE - The head of the list isn't interesting.
 % Recursively process the tail.
-% ---FILL ME IN---
-
+myNextto(X,Y,[_|T]) :-
+	myNextto(X,Y,T).
 
 % myNth0: Takes an index, a list, and a result element.  Gets the
 % nth element in the list, starting from 0.  For example:
@@ -67,13 +67,16 @@ myMember(X, [_|R]) :-
 
 % BASE CASE - We have 0 and a non-empty list.  The result
 % should simply be the head of the non-empty list.
-% ---FILL ME IN---
+myNth0(0,[H|_],H).
 
 % RECURSIVE CASE - We have a number greater than 0 and a
 % non-empty list.  Process the tail of the list recursively
 % with the number - 1.  Keep in mind that to perform any sort
 % of arithmetic, we must use `is` in Prolog.
-% ---FILL ME IN---
+myNth0(N,[_|T],X) :-
+	N > 0,
+	N1 is N-1,
+	myNth0(N1,T,X).
 
 % myLast: Gets the last element of a list (the first parameter),
 % returning it in the second parameter.  For example:
@@ -85,11 +88,12 @@ myMember(X, [_|R]) :-
 
 % BASE CASE - A list that contains one element.  The last element
 % is that element directly.
-% ---FILL ME IN---
+myLast([H],H). 
 
 % RECURSIVE CASE - A list that contains more than one element.
 % Recursively process on the list, starting from the second element
-% ---FILL ME IN---
+myLast([_|T], X) :-
+	myLast(T,X).
 
 % myLength: takes an input list, and returns the length of the input
 % list in the second parameter.  For example:
@@ -97,7 +101,12 @@ myMember(X, [_|R]) :-
 % myLength([], 0). % true
 % myLength([0, 1, 2], I). % I = 3
 
-% ---FILL ME IN---
+myLength([_|T],N) :-
+	N > 0,
+	N1 is N-1,
+	myLength(T,N1).
+
+myLength([],0).	
 
 % mySum: takes a list (presumably of integers) and returns their
 % summation in the second parameter.  For example:
@@ -106,4 +115,9 @@ myMember(X, [_|R]) :-
 % mySum([1, 2, 3], 6). % true
 %
 
-% ---FILL ME IN---
+mySum([],0).
+
+mySum([H|T],N) :-
+	N > 0,
+	N1 is N - H,
+	mySum(T,N1).

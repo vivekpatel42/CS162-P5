@@ -8,7 +8,13 @@
 % 0! = 1
 % n! = n * (n - 1)!, for n > 0
 
-% ---REPLACE ME WITH CODE---
+  
+factorial(X,Y) :-  
+   X > 0, 
+   X1 is X-1, 
+   factorial(X1,Y1), 
+   Y is X * Y1.
+factorial(0,1). 
 
 % With your factorial routine in hand, the following queries should
 % all succeed:
