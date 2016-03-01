@@ -105,57 +105,36 @@ holder(Board, cols([Col1, Col2, Col3, Col4, Col5, Col6, Col7, Col8, Col9]), cube
 % instantiated with a satisfying Sudoku solution.
 
 solve(Board) :-
-	write('Solving board...\n'),
 	holder(Board, cols(Cols), cubes(Cubes)),
 	solveRow(Board,Board,0,Cols,Cubes).
 
 solveRow(Board,[H|T],Row, Cols,Cubes) :-
-	%% write(Row),
-	%% write('\n'),
-	%% write('Checking row constraint...\n'),
 	Row < 9,
-	%% write('Solving single row...\n'),
 	solveCol(Board,H,H,Row,0,Cols,Cubes),
 	N is Row + 1,
 	solveRow(Board,T,N,Cols,Cubes).
-
-%%solveRow(Board,[],Row,_,_).
 
 solveRow(_,_,9,_,_).
 
 solveCol(Board,FullRow,[H|T],Row,Col,Cols,Cubes) :-
 	Col < 9,
-	%% write(Col),
-	%% write('\n'),
-	%% write('Solving singleton item...\n'),
 	solveItem(Board,FullRow,H,Row,Col,Cols,Cubes),
 	N is Col + 1,
 	solveCol(Board,FullRow,T,Row,N,Cols,Cubes).
-
-%%solveCol(Board,FullRow,[],Row,Col,_,_).	
 
 solveCol(_,_,_,_,9,_,_).
 
 solveItem(Board,FullRow,H,Row,Col,Cols,Cubes) :-
 	nonvar(H);
-	%% write('Row: '),
-	%% write(Row),
-	%% write(', Col: '),
-	%% write(Col),
-	%% write(', '), 
 	(var(H),
 	digit(H),
 	cubeNum(Row,Col,CubeNum),
-	%% write(H), nl,
-	%% getCube(Board, CubeN, L1),
-	%% columnAsList(Board, Col, L2),
 	nth0(Col, Cols, NewColumn),
 	nth0(CubeNum, Cubes, NewCube),
 	is_set(NewColumn),
 	is_set(NewCube),
 	is_set(FullRow)).
 			
-
 % Prints out the given board.
 printBoard([]).
 printBoard([Head|Tail]) :-
@@ -190,7 +169,7 @@ test2(Board) :-
 
 
 test3(Board) :-
-	Board = [[_, _, _, 7, 9, 1, 8, _, _],
+				Board = [[_, _, _, 7, 9, 1, 8, _, _],
                  [_, _, _, _, _, 4, 3, 1, 7],
                  [_, _, 6, 3, _, _, _, 2, 9],
                  [7, _, _, _, 2, _, _, _, _],
